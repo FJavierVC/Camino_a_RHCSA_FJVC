@@ -294,3 +294,50 @@ En esta sección repasé tres ideas importantes:
    - `/usr/share/doc`
 
 📝 Conocer estas herramientas es clave para trabajar con mayor autonomía en Linux y resolver dudas rápidamente, especialmente en preparación para RHCSA.
+
+
+## Exam Preparation Tasks
+
+### Define Key Terms
+
+- Shell
+- Bash
+- Internal command
+- External command
+- `$PATH`
+- STDIN
+- STDOUT
+- STDERR
+- Redirection
+- File descriptor
+- Device file
+- Pipe
+- Environment
+- Variable
+- Login shell
+- Subshell
+
+---
+
+## Review Questions
+
+- What is a variable?
+- Which command enables you to find the correct man page based on keyword usage?
+- Which file do you need to change if you want a variable to be set for user **bob** when this user logs in?
+- When analyzing how to use a command, you read that the documentation is maintained with the **Texinfo** system. How can you read the information?
+- What is the name of the file where Bash stores its history?
+- Which command enables you to update the database that contains man keywords?
+- How can you undo the last modification you have applied in Vim?
+- What can you add to a command to make sure that it does not show an error message, assuming that you do not care about the information in the error messages either?
+- How do you read the current contents of the `$PATH` variable?
+- How do you repeat the last command you used that contains the string `dog` somewhere in the command?
+
+---
+
+## Lab 2.1
+
+1. Modify your shell environment so that on every subshell that is started, a variable is set. The name of the variable should be `COLOR`, and the value should be set to `red`. Verify that it is working.
+
+2. Use the appropriate tools to find the command that you can use to change a user password. Do you need root permissions to use this command?
+
+3. From your home directory, type the command `ls -al wergihl *` and ensure that both errors and regular output are redirected to a file with the name `/tmp/lsoutput`.
