@@ -22,7 +22,34 @@ y para leer el contenido de una variable, es suficiente con hacerlo con un **ech
 
 Cuando un usuario se loggea, un entorno es creado de manera automatica. Condifuracion que esta seteada en los siguientes archivos de configuracion:
 
-`/etc/profile`
-`/etc/bashrc`
-`~/.bash_profile`
-`~/.bashrc`
+`/etc/profile` Es el archivo generico que es procesado cuando cualquier usuario inicia sesion
+
+`/etc/bashrc`  Se procesa cuando se inicia una subshell
+
+`~/.bash_profile` En este archivo, se pueden definir las variables para el inicio de sesion de un usuario especifico
+
+`~/.bashrc` En este se pueden definir las variables de subshell para un usuario especifico.
+
+### Diferencia entre Login shell y subshell
+
+Un login shell es la shell que se inicia cuando entras formalmente al sistema como usuario.
+Un subshell es una shell hija que nace dentro de otra shell que ya estaba abierta.
+
+La diferencia importante no es solo “otra terminal”, sino cómo fue iniciada y qué configuración carga.
+
+
+
+## Buscando ayuda
+Al momento de querer utilizar los comandos de cualquier distribucion, nos daremos cuenta de que existen cientos de ellos con diversas variantes, atributos y opciones. Es aquí cuando el comando **man** aparece, pues se convierte en el mejor recurso para obtener ayuda sobre sintaxis y el uso de comandos.
+Además de permitir desplegar una lista corta de comandos usando **command --help**.
+
+### Help
+La forma mas rápida de aprender a usar el atributo **--help**. No solo se desplegara un resumen del comando, sino tambien las opciones que se pueden agregar. Hay que tomar en cuenta que no existe una manera estricta de usar los atributos, pueden ser usados en el orden que se desee.
+
+### Usando man
+Las paginas de man describen de manera exacta como usar un comando. Algunas de las claves esenciales para usar **man** son:
+**Note** >> La parte mas importante de una pagina del manual es la final, en ella se encuentran dos importantes secciones, ejemplos y la seccion "See Also"
+
+- **G** para moverte al final de la pagina lo mas rapido posible
+- **/example** para buscar la pagina del manual donde se muestren ejemplos de uso del comando
+
