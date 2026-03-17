@@ -60,6 +60,18 @@ Para usarlo de manera correcta, usaremos  **man -k** seguido de la palabra que e
 En ocasiones, al usar este comando, encontraremos demasiada información, podemos ser más especificos, agregando filtros con el comando **grep**, teniendo en mente que que realmente conocemos lo que estamos buscando.
 
 Las paginas **man** estan categorizadas de la siguiente forma:
-- Programas ejecutables o comandos shell
-- Convenciones y formatos de archivos 
-- Comandos para administracion del sistema
+- **1** Programas ejecutables o comandos shell
+- **5** Convenciones y formatos de archivos 
+- **8** Comandos para administracion del sistema
+
+De esta manera, podemos utilizar sabiamente grep, por ejemplo, si queremos encontrar algo sobre passwords y sabemos que tiene que ver con la configuración de archivos podemos limitar la busqueda de la siguiente manera:
+
+`man -k password | grep 5`
+
+Tener en cuenta que la mandb debe actualizarse. Para hacer la actualizacion manual, es sencillo, solo debemos ejecutar el comando **mandb** como administrador sin argumentos.
+
+#### Info
+Ademas de la informacion que podemos encontrar en man, algunos comandos cuentan con documentacion extra, muchas veces la podemos ver en el apartado de "See Also" de man.
+Los comandos **pinfo o info** nos permiten acceder a esta ducumentacion mas extendida, la cual se aloja como un manual Textinfo.
+**Pinfo** es mas facil de usar, por sus listas de items o menus.
+
