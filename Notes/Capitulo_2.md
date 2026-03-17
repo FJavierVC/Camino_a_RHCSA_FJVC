@@ -1,4 +1,3 @@
-````md
 # 🐧 Fundamentos Básicos de Linux
 
 ---
@@ -295,4 +294,3 @@ En esta sección repasé tres ideas importantes:
    - `/usr/share/doc`
 
 📝 Conocer estas herramientas es clave para trabajar con mayor autonomía en Linux y resolver dudas rápidamente, especialmente en preparación para RHCSA.
-````
