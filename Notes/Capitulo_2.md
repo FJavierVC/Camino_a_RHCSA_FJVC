@@ -53,3 +53,13 @@ Las paginas de man describen de manera exacta como usar un comando. Algunas de l
 - **G** para moverte al final de la pagina lo mas rapido posible
 - **/example** para buscar la pagina del manual donde se muestren ejemplos de uso del comando
 
+#### Encontrando la pagina correcta del manual
+**apropos** o **man -k** son utiles para encontrar informacion especifica en las paginas del manual.
+Para usarlo de manera correcta, usaremos  **man -k** seguido de la palabra que estamos buscando en la base de datos del manual.
+
+En ocasiones, al usar este comando, encontraremos demasiada información, podemos ser más especificos, agregando filtros con el comando **grep**, teniendo en mente que que realmente conocemos lo que estamos buscando.
+
+Las paginas **man** estan categorizadas de la siguiente forma:
+- Programas ejecutables o comandos shell
+- Convenciones y formatos de archivos 
+- Comandos para administracion del sistema
