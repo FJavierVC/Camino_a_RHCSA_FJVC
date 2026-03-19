@@ -300,36 +300,79 @@ En esta sección repasé tres ideas importantes:
 
 ### Define Key Terms
 
-- Shell
-- Bash
-- Internal command
-- External command
-- `$PATH`
-- STDIN
-- STDOUT
-- STDERR
-- Redirection
-- File descriptor
-- Device file
-- Pipe
-- Environment
-- Variable
-- Login shell
-- Subshell
+- **Shell**
+  
+  Es descrito como el entorno donde los usuarios y administradores introducen comandos que son ejecutados por el sistema operativo.
+- **Bash**
+  
+  Tipo de shell, es el interprete entre el usuario y el sistema operativo
+- **Internal command**
+  
+  Tipos de comandos pre establecidos en el sistema, son parte del mismo shell. Entre ellos se encuentran comandos como `type`, `pwd`, `cd`
+- **External command**
+  
+  Tipos de comandos establecidos segun la distro o por usuarios externos, estos normalmente tienen su propia ruta, visible desde `$PATH`
+- **`$PATH`**
+  
+  Variable de entorno que actua como mapa para que el shell encuentre programas ejecutables
+- **STDIN**
+  
+  Entrada generica de informacion al shell, normalmente la entrada del teclado
+- **STDOUT**
+  
+  Salida estandar de la ejecucion de un comando, cuando este se realiza de manera exitosa.
+- **STDERR**
+  
+  Salida de error al ejecutar un comando, este describe el tipo de error
+- **Redirection**
+  
+  Manera de redirigir tanto la entreada, salida normal o de error de un comando, usando > >> o |
+- **File descriptor**
+  
+  0, 1 o 2, dependiendo del tipo de salida que busquemos, siendo 0 la entrada, 1 salida de comando.
+- **Device file**
+
+  Archivo que se encarga de la comunicacion entre la terminal y el hardware, hace la traduccion de comandos a bits y biceversa.
+
+- **Pipe**
+
+Es una forma de redirigir el output de un comando para utilizarlo posteriormente con otro, puede entenderse como la concatenacion de stdout con un nuevo comando.
+
+- **Environment**
+
+Es la manera en que estan configuradas las variables de entorno de un ambiente linux, segun las necesidades del usuario.
+- **Variable**
+
+Asignación de un valor, comando o funciona una palabra en especifico para su uso posterior, permitiendo acceder a dico valor desde cualquier parte del sistema, esto cuando se configuran como variables de entorno.
+
+- **Login shell**
+
+Es el primer shell al que entras al hacer un login, permite correr scripts, comandos, etc.
+- **Subshell**
+
+Es la shell que se abre al ejecutar comandos desde una shell principal o una login shell.
 
 ---
 
 ## Review Questions
 
 - What is a variable?
+
 - Which command enables you to find the correct man page based on keyword usage?
+
 - Which file do you need to change if you want a variable to be set for user **bob** when this user logs in?
+
 - When analyzing how to use a command, you read that the documentation is maintained with the **Texinfo** system. How can you read the information?
+
 - What is the name of the file where Bash stores its history?
 - Which command enables you to update the database that contains man keywords?
+
 - How can you undo the last modification you have applied in Vim?
+
 - What can you add to a command to make sure that it does not show an error message, assuming that you do not care about the information in the error messages either?
+
 - How do you read the current contents of the `$PATH` variable?
+
 - How do you repeat the last command you used that contains the string `dog` somewhere in the command?
 
 ---
