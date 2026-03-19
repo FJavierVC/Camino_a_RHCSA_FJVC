@@ -358,23 +358,43 @@ Es la shell que se abre al ejecutar comandos desde una shell principal o una log
 
 - What is a variable?
 
+Es una palabra o conjunto de caracteres que reciben un valor dinamico.
+
 - Which command enables you to find the correct man page based on keyword usage?
+
+`man -k keyword`
 
 - Which file do you need to change if you want a variable to be set for user **bob** when this user logs in?
 
+`vim.bashrc`
+
 - When analyzing how to use a command, you read that the documentation is maintained with the **Texinfo** system. How can you read the information?
 
+Podemos utilizar el comando `pinfo` si esta disponible, en caso contrario, usariamos solo `info` seguido del comando a revisar.
+
 - What is the name of the file where Bash stores its history?
+
+`.bash_history`
+
 - Which command enables you to update the database that contains man keywords?
+
+`mandb`
 
 - How can you undo the last modification you have applied in Vim?
 
+`u`
+
 - What can you add to a command to make sure that it does not show an error message, assuming that you do not care about the information in the error messages either?
+
+`2>`
 
 - How do you read the current contents of the `$PATH` variable?
 
+`echo $PATH`
+
 - How do you repeat the last command you used that contains the string `dog` somewhere in the command?
 
+`!dog`
 ---
 
 ## Lab 2.1
