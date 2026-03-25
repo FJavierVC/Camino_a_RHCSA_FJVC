@@ -142,6 +142,3 @@ A diferencia de la variable `LANG` anterior, esta debe sobrevivir al cierre de l
 *   **`export`**: Es fundamental. Sin `export`, la variable es local; con `export`, los procesos hijos (scripts, programas) pueden verla.
 *   **`source ~/.bashrc`**: Alternativa para aplicar cambios sin tener que cerrar y abrir la terminal.
 
-#### Encontrando la pagina correcta del manual
-**apropos** o **man -k** son utiles para encontrar informacion especifica en las paginas del manual.
-Para usarlo de manera correcta, usaremos  **man -k** seguido de la palabra que estamos buscando en la base de datos del manual.
