@@ -69,7 +69,7 @@ xrdp-chansrv on /home/a200461986@tslab.mx/thinclient_drives type fuse.xrdp-chans
 
 ```
 Utilizando el comando `df -hT`
-
+```
 a200511609@iao-bastion:~$ df -hT
 Filesystem                        Type   Size  Used Avail Use% Mounted on
 tmpfs                             tmpfs  6.3G  3.3M  6.3G   1% /run
@@ -78,5 +78,6 @@ tmpfs                             tmpfs   32G  749M   31G   3% /dev/shm
 tmpfs                             tmpfs  5.0M     0  5.0M   0% /run/lock
 /dev/sda2                         ext4   2.0G  221M  1.6G  13% /boot
 tmpfs                             tmpfs  6.3G  160K  6.3G   1% /run/user/402401103
+```
 tmpfs                             tmpfs  6.3G  176K  6.3G   1% /run/user/120
 
