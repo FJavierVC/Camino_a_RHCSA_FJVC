@@ -29,3 +29,18 @@ Define la disposición de los file system de linux, puede ser consultada en `man
 ### Mounts
 Para comprender la organizacion de los file systems de linux, es indispensable entender el concepto de montaje. Un **"mount"** es una conexión entre un dispositovo y un directorio. 
 Un file system de linux esta presentado por una jerarquia, con el **root directory** como el punto de inicio.
+
+Cuando se realiza el proceso de montage, un dispositivo queda ligado a un directorio, de esta forma, posdterior a un montaje exitoso el mismo directorio da acceso al contenido del dispositivo.
+
+Hacer el montaje de dispositos es lo que hace a linux un sistema flexible. hacer el montage en un solo dispositivo trae muchos problemas, seguir esta practica lleva consigo ventajas como:
+
+- Permite que actividades que se llevan a cabo en otras areas del sistema corran libremente.
+- Permite distinguir entre diversas areas del sistema, aislando servicios y configuraciones de seguridad.
+- Permite crear de manera dinamica almacenamiento adicional, si se llena un dispositivo con file systems que almacena todo, impide esta actividad.
+
+Se puede organizar los file systems en diversos dispositivos, tal como una particion y volumenes logicos. Para configurar un dispositivo como un montage dedicado, se necesita ser capaz de usar ciertas opciones de montage especificas. Algunos directorios son montados comunmente en dispositivos dedicados como pueden ser:
+
+- `/boot` Este directorio normalmente esta en un dispositivo separado, debido a que requiere informacion escencial de la computadora para bootear. De esta forma, el directorio root `/` usualmente esta en un LVM Logical Volume Manager, del cual Linux no puede bootear de manera predeterminada. El kernel y archivos asociados necesitan estar alojados de manera independiente en un dispositivo /boot dedicado.
+- `/boot/EFI` Si el sistema utiliza Extensible Firmwre Interface (EFI) para bootear, necesita un dispositivo dedicado de montage, dando acceso a todos los archivos requeridos en una etapa temprana del proceso de booteo. 
+- `/var` Este directorio esta alojado en un dispositivo dedicado debido a su crecimiento acelerado y dinamico. Cada log file esta escrito en `/var/log`, manejandolo de manera separada puedes asegurarte de que no llene el espacio de tu servidor.
+- `/home` Este se maneja en un dispositivo dedicado debido a razones de seguridad.
