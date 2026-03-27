@@ -44,3 +44,70 @@ Se puede organizar los file systems en diversos dispositivos, tal como una parti
 - `/boot/EFI` Si el sistema utiliza Extensible Firmwre Interface (EFI) para bootear, necesita un dispositivo dedicado de montage, dando acceso a todos los archivos requeridos en una etapa temprana del proceso de booteo. 
 - `/var` Este directorio esta alojado en un dispositivo dedicado debido a su crecimiento acelerado y dinamico. Cada log file esta escrito en `/var/log`, manejandolo de manera separada puedes asegurarte de que no llene el espacio de tu servidor.
 - `/home` Este se maneja en un dispositivo dedicado debido a razones de seguridad.
+- `/usr` este directorio solo contiene archivos del sistema operativo, normalmente usuarios estandar no necesitan tener acceso a este directorio, debido a esto debe estar en un dispositivo dedicado.
+
+
+
+Algunos servidores manejar directorios que estan montados en particiones dedicadas u otros volumenes. Es a criterio del aministrador la forma en que se van a montar los directorios.
+
+Para tener una vista general de todos los puntos de montaje podemos utilizar el comando **`mount`** el cual funciona para dar la informaicion alojada en `/proc/mounts` donde el kernel mantiene los datos de los puntos de montaje actuales. Además, muestra las interfaces del kernel.
+
+- `df -Th` Este comando fue diseñado para mostrar el espacio libre que queda en cada dispositivo montado, incluye la mayotria de los sistemas.
+- `findmnt` muestra los montajes y su relacion con otros existentes. El comando `mount` puede ser un tanto abrumador debido a su salida, es por eso que usamos este.
+
+cuando utilizamos el comando `df -hT` obtendemos un output como este
+```
+student@localhost:~$ df -hT
+Filesystem            Type      Size  Used Avail Use% Mounted on
+/dev/mapper/rhel-root xfs        38G  5.7G   32G  16% /
+devtmpfs              devtmpfs  4.0M     0  4.0M   0% /dev
+tmpfs                 tmpfs     1.8G   84K  1.8G   1% /dev/shm
+tmpfs                 tmpfs     705M   12M  694M   2% /run
+tmpfs                 tmpfs     1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
+/dev/mapper/rhel-home xfs        19G  407M   18G   3% /home
+/dev/sda2             xfs       959M  331M  629M  35% /boot
+tmpfs                 tmpfs     353M  132K  353M   1% /run/user/1000
+/dev/sr0              iso9660   817M  817M     0 100% /run/media/student/RHEL-10-0-BaseOS-x86_64
+
+```
+
+Podemos visualizar que nos arroja 7 columnas con informacion de interes.
+
+- **Filesystem**
+Muestra el nombre del archivo del dispositivo que interactua con el disco del dispositvo usado. El dispositivo real dentro de la salida comienzan con /dev. Tambien se pueden observar dispositivos tmpfs, son dispostivos de kernel que son usados para crear archivos del sistema temporales en RAM.
+- **Type**
+El tipo de filesystem que se creo para montar el dispositivo
+- **Size**
+El tamaño del dispositivo montado
+- **Used**
+La cantidad de espacio en disco que el dispositivo tiene en uso
+- **Avail**
+La cantidad de espacio en disco que esta libre
+- **Use%**
+El porcentage de espacio libre
+- **Mounted on**
+El directorio en donde actualmente esta montado el dispositivo
+
+Nota importante, la informacion desplecada con el comando reporta el tamaño en kibibytes, si usamos la opcion `-m` veremos que la informacion de desplega en mebibytes y usando `-h` nos da informacion legible para los humanos en formato Jib, MiB, GiB, TiB, o PiB/
+
+## Manejo de archivos
+
+Algunas de las tareas que tiene que realizar un administrador de sistemas linux son:
+- Trabajar con wildcards
+- Manejar y trabajar con directorios
+- Trabajar con rutas relativas y absolutas
+- Escuchar archivos y directorios
+- Copiar archivos y directorios
+- Mover archivos y directorios
+- Eliminar archivos y directorios
+
+Ahora veremos como realizar estas acciones:
+
+### Trabajar con wildcards
+Trabajar con wildcars hace la vida del administrador mas sencilla, se trata de una caracteriztica de shell que te permite referirte a multiples archivos de una manera mas facil.
+
+`*` Referencia a un ilimitado numero de caracteres. por ejemplo `ls *`, muestra todos los archivos en el directorio actual, menos los que cuentan con un nombre que comience con un punto (`.`).
+`?` Se usa para referirse a un caracter especifico, que puede ser cualquier caracter. `ls c?t`  en este ejemplo podria referise tanto a `cat` como a `cut`.
+`[auo]` Refiere a un caracter que deberia ser seleccionado de un rango que esta especificado entre corchetes. `ls c[auo]t` de esta forma podrian acer match `cat`,`cau` y `cot` 
+
+### Manejar y trabajar con directorios
