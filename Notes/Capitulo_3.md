@@ -44,3 +44,4 @@ Se puede organizar los file systems en diversos dispositivos, tal como una parti
 - `/boot/EFI` Si el sistema utiliza Extensible Firmwre Interface (EFI) para bootear, necesita un dispositivo dedicado de montage, dando acceso a todos los archivos requeridos en una etapa temprana del proceso de booteo. 
 - `/var` Este directorio esta alojado en un dispositivo dedicado debido a su crecimiento acelerado y dinamico. Cada log file esta escrito en `/var/log`, manejandolo de manera separada puedes asegurarte de que no llene el espacio de tu servidor.
 - `/home` Este se maneja en un dispositivo dedicado debido a razones de seguridad.
+- `/usr` este directorio solo contiene archivos del sistema operativo, normalmente usuarios estandar no necesitan tener acceso a este directorio, debido a esto debe estar en un dispositivo dedicado.
