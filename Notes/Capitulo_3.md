@@ -111,3 +111,17 @@ Trabajar con wildcars hace la vida del administrador mas sencilla, se trata de u
 `[auo]` Refiere a un caracter que deberia ser seleccionado de un rango que esta especificado entre corchetes. `ls c[auo]t` de esta forma podrian acer match `cat`,`cau` y `cot` 
 
 ### Manejar y trabajar con directorios
+Para utilizar linux, utilizamos directorios que en ocasiones tambien llamamos folders. Es indispensable saber moverse entre ellos, para darle una estructura de jerarquía.
+#### Rutas Relativas y Absolutas
+Las **rutas absolutas** son rutas completas que hacen referencia a un archivo o directorio con el que se desea trabajar. Dicha ruta **path** inicia con la carpeta "root", seguida de todos los subdirectorios hasta llegar al archivo o carpeta. No importa en que parte se ejecute, los nombres de archivo absolutos o rutas absolutas siempre van a funcionar.
+Un ejemplo de un "absulute filename" es `/home/lisa/file1`.
+
+Las **rutas relativas** se ejecutan en el directorio actual en el que estemos parados, tal como lo muestra el comando `pwd`.
+
+Ejemplo de comandos con rutas relativas y absolutas
+- `-cp /home/lisa/file1 /home/lara` Como usa rutas absolutas, funcionara siempre, ejecutandolo donde sea que estemos parados.
+- `cp lisa/file1 lara` Asumiento de nuestro directorio actual es **/home** al ejecutar este comando podemos ejecutarlo sin referenciar al directorio padre `/home`, debido a que tanto el archivo fuente como el destino se referencian como ruta relativa. Sin embargo, es un riesgo hacerlo así, pues si no existe el directorio **/lara**, el comando `cp` creara un archivo llamado **lara**.
+Para asegurarnos que cree el archivo dentro del directorio y si no existe nos mande el STDERR usariamos el comando `cp lisa/dile1 lara/`.
+- Imaginemos que estamos en **home/lisa**, podemos usar `cp file1 ../lara`, vemos que en este ejemplo el destino tiene "**..**" lo cual le da la indicacion de escalar a un directorio padre antes de crear el archivo.
+
+
