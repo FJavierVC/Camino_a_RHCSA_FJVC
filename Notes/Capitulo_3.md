@@ -125,3 +125,27 @@ Para asegurarnos que cree el archivo dentro del directorio y si no existe nos ma
 - Imaginemos que estamos en **home/lisa**, podemos usar `cp file1 ../lara`, vemos que en este ejemplo el destino tiene "**..**" lo cual le da la indicacion de escalar a un directorio padre antes de crear el archivo.
 
 
+Nota, al igual que con los comandos, podemos usar la tecla TAB para autocompletar los filename de los path, y así ahorrar tiempo de escritura o de busqueda.
+
+### Listar Archivos y Directorios
+Cuando trabajamos con directorios dentro de linux, es importante saber listarlos y su contenido, para eso podemos usar el comando `ls`. Si se usa sin argumentos, simplemente nos listara los archivos o directorios que se encuentran dentro de la ruta en la que estamos parados.
+El comando `ls` puede combinarse con multiples argumentos para obtener salidas interesantes, segun nuestras necesidades.
+
+- `ls -l` Lista el contenido del directorio actual, incluyendo la informacion de cada uno, como la fecha de creacion y los permisos.
+- `ls -a` Lista todo el contenido del directorio, incluyendo aquellos que estan ocultos (Aquellos que comience con `.`)
+- `ls lrt` la opcion **t** ordena los archivos segun su fecha de creacion o modificacion. La opcion **r** pondra al top de la lista el mas reciente.
+- `ls -d` Muestra los nombres de los directorios que coincidan con el wildcard que usemos en combinacion.
+- `ls -R` Muestra el contenido del directorio actual, asi como el contenido de los subdirectorios.
+
+
+### Copiar archivos y directorios
+El copiado se realiza con el comando `cp`, para copiar algun archivo simplemente tenemos que seguir esta logica: `cp /<path_archivo_original> /<path_archivo_destino>`.
+Tambien podemos copiar el contenido de un directorio completo, con subdirectorios incluidos, para ello, tenemos que usar el argumento `-R`
+AL utilizar el argumento `-a`, copiaremos los archivos y directorios respetando los privilegios que ya tenia configurado previamente, asi como todas sus otras propiedades.
+Cuando queremos tratar con archivos ocultos, el comando cp necesita ser configurado o bien, a;adir informacion extra.
+
+`-cp /directorio/.* /tmp` Este comando movera todo aquello que comience con un punto al directorio /tmp.
+`-cp -a /directorio/ .` Este comando copia el directorio completo incluyendo su contenido al directorio actual en el que estamos.
+`cp -a /somedir> . .` copia los arcivos, regulares y ocultos al directorio acual
+
+### Moviendo directorios y archivos
