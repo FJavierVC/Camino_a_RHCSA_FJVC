@@ -149,3 +149,4 @@ Cuando queremos tratar con archivos ocultos, el comando cp necesita ser configur
 `cp -a /somedir> . .` copia los arcivos, regulares y ocultos al directorio acual
 
 ### Moviendo directorios y archivos
+Para mover archivos de un path a otro, usaremos el comando `mv` el cuae remueve el archivo de su directorio actual y lo pegara en el nuevo. Tambien podemos usar este comando para renombrar archivos o directorios.
