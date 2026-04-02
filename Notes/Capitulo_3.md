@@ -150,3 +150,15 @@ Cuando queremos tratar con archivos ocultos, el comando cp necesita ser configur
 
 ### Moviendo directorios y archivos
 Para mover archivos de un path a otro, usaremos el comando `mv` el cuae remueve el archivo de su directorio actual y lo pegara en el nuevo. Tambien podemos usar este comando para renombrar archivos o directorios.
+Ejemplo:
+`mv myfile /tmp` Este comando movera el archivo myfile que se aloja en el directorio actual al directorio /tmp.
+
+`mkdir somefiles; mv somefiles /tmp` Este comando sirve para crear un directorio y posteriormente moverlo a una ruta especificada. Funcionaria incluso si el directorio cuenta con archivos.
+
+`mv myfile mynewfile` Asi podemos usar el comando **mv** para renombrar un archivo.
+
+### Borrando Archivos y Directorios
+Para borrar archivos y directorios usamos el comando `rm`. Se puede utilizar en archivos simples, si queremos eliminar un directorio que contiene archivos dentro, debemos usar el argumento **-r**.
+
+`Nota, dentro de RHEL al utilizar el comando **rm** saldra una leyenda que nos pide ejecutar el comando con privilegios root, esto es debido a que esta definido como un alias **rm -i**, siempre se puede cambiar esta configuracion usando la opcion **-f** o removiendo el alias del directorio **/root/.bashrc**.`
+
