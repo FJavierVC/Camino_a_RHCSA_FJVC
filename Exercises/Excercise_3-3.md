@@ -8,3 +8,12 @@ student@localhost:~$ pwd
 /home/student
 student@localhost:~$
 ```
+Ahora escribe "Ahora escribe el comando `mkdir newfiles oldfiles`"
+Ahora `Type`
+
+```
+student@localhost:~$ mkdir newfiles oldfiles
+student@localhost:~$ ls
+Desc  Desc.txt  Desktop  Documents  Downloads  file1  Music  newfiles  oldfiles  output  Pictures  Public  Templates  testfile  Videos
+```
+
