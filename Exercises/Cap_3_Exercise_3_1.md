@@ -49,7 +49,7 @@ Filesystem             Size  Used Avail Use% Mounted on
 devtmpfs               4.0M     0  4.0M   0% /dev
 tmpfs                  1.8G   84K  1.8G   1% /dev/shm
 tmpfs                  705M   12M  694M   2% /run
-tmpfs                  1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
+tmpfs                  1.0M     0  1.0M   0% /run/credentials/systemd-journald.servic
 /dev/mapper/rhel-home   19G  407M   18G   3% /home
 /dev/sda2              959M  331M  629M  35% /boot
 tmpfs                  353M  132K  353M   1% /run/user/1000
