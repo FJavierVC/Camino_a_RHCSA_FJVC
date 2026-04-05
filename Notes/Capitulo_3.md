@@ -141,12 +141,14 @@ El comando `ls` puede combinarse con multiples argumentos para obtener salidas i
 ### Copiar archivos y directorios
 El copiado se realiza con el comando `cp`, para copiar algun archivo simplemente tenemos que seguir esta logica: `cp /<path_archivo_original> /<path_archivo_destino>`.
 Tambien podemos copiar el contenido de un directorio completo, con subdirectorios incluidos, para ello, tenemos que usar el argumento `-R`
-AL utilizar el argumento `-a`, copiaremos los archivos y directorios respetando los privilegios que ya tenia configurado previamente, asi como todas sus otras propiedades.
+Al utilizar el argumento `-a`, copiaremos los archivos y directorios respetando los privilegios que ya tenia configurado previamente, asi como todas sus otras propiedades.
 Cuando queremos tratar con archivos ocultos, el comando cp necesita ser configurado o bien, a;adir informacion extra.
 
-`-cp /directorio/.* /tmp` Este comando movera todo aquello que comience con un punto al directorio /tmp.
-`-cp -a /directorio/ .` Este comando copia el directorio completo incluyendo su contenido al directorio actual en el que estamos.
-`cp -a /somedir> . .` copia los arcivos, regulares y ocultos al directorio acual
+- `cp /directorio/.* /tmp` Este comando movera todo aquello que comience con un punto al directorio /tmp.
+
+- `cp -a /directorio/ .` Este comando copia el directorio completo incluyendo su contenido al directorio actual en el que estamos.
+
+- `cp -a /somedir> . .` copia los arcivos, regulares y ocultos al directorio acual
 
 ### Moviendo directorios y archivos
 Para mover archivos de un path a otro, usaremos el comando `mv` el cuae remueve el archivo de su directorio actual y lo pegara en el nuevo. Tambien podemos usar este comando para renombrar archivos o directorios.
@@ -162,3 +164,5 @@ Para borrar archivos y directorios usamos el comando `rm`. Se puede utilizar en 
 
 `Nota, dentro de RHEL al utilizar el comando **rm** saldra una leyenda que nos pide ejecutar el comando con privilegios root, esto es debido a que esta definido como un alias **rm -i**, siempre se puede cambiar esta configuracion usando la opcion **-f** o removiendo el alias del directorio **/root/.bashrc**.`
 
+### Usando Enlances
+Los enlaces en linux funcionan como los alias, sin embargo, en este caso estan casados a un archivo. Hay links simbolicos y hard links. Para entenderlos es necesario conocer como los file system de linux usa los **inodos** para los sistemas de administrador (file system administration).
