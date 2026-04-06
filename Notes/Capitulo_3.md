@@ -166,3 +166,13 @@ Para borrar archivos y directorios usamos el comando `rm`. Se puede utilizar en 
 
 ### Usando Enlances
 Los enlaces en linux funcionan como los alias, sin embargo, en este caso estan casados a un archivo. Hay links simbolicos y hard links. Para entenderlos es necesario conocer como los file system de linux usa los **inodos** para los sistemas de administrador (file system administration).
+
+#### Entender los Hard links
+Linux almacena la informacio de los archivos en inodos, los cuales se usan para alojar la informacion administrativa de los datos de cada archivo. Cada archivo en linux tiene un inodo, estos alojan informacion como:
+
+- El espacio donde el archivo esta almacenado en disco
+- La fecha de creacion, acceso  modificacion.
+- Permisos
+- Propietarios de archivos.
+
+Los nombres de los archivos no estan almacenados en los inodos, ya que estos **nombres** son el mismo **Hard link** en si. Realmente nunca sabe que nombre contiene, solo sabe la cantidad de nombres que estan asociados a el. Los nombres estan alojados en el directorio y cada nombre sabe a que inodo esta asociado para acceder a la informacion.
