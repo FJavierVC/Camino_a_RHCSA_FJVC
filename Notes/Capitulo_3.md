@@ -148,7 +148,7 @@ Cuando queremos tratar con archivos ocultos, el comando cp necesita ser configur
 
 - `cp -a /directorio/ .` Este comando copia el directorio completo incluyendo su contenido al directorio actual en el que estamos.
 
-- `cp -a /somedir> . .` copia los arcivos, regulares y ocultos al directorio acual
+- `cp -a /somedir/ . .` copia los arcivos, regulares y ocultos al directorio acual
 
 ### Moviendo directorios y archivos
 Para mover archivos de un path a otro, usaremos el comando `mv` el cuae remueve el archivo de su directorio actual y lo pegara en el nuevo. Tambien podemos usar este comando para renombrar archivos o directorios.
@@ -176,3 +176,8 @@ Linux almacena la informacio de los archivos en inodos, los cuales se usan para 
 - Propietarios de archivos.
 
 Los nombres de los archivos no estan almacenados en los inodos, ya que estos **nombres** son el mismo **Hard link** en si. Realmente nunca sabe que nombre contiene, solo sabe la cantidad de nombres que estan asociados a el. Los nombres estan alojados en el directorio y cada nombre sabe a que inodo esta asociado para acceder a la informacion.
+
+Cuando creas un archivo, tu le das un nombre, basicamente, este nombre es el hard link. En el file system de linux, multiples hard link pueden ser creados a un archivo, muy util si necesitamos que un archivo con el mismo contenido tenga que estar disponible en multiples locaciones. si un cambio es realizado en alguno de los hard links, este en automatico se mostrara en los demas hard links. Algunas de sus restricciones son:
+- Los hard links deben existir todos en el mismo dispositivo (particio, volumen logico, etc)
+- No puedes crear hard links a directorios
+-  Cuando el ultimo hard link es removido, el acceso a la informacion del archivo tambien es removido.
