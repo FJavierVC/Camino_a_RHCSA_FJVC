@@ -181,3 +181,26 @@ Cuando creas un archivo, tu le das un nombre, basicamente, este nombre es el har
 - Los hard links deben existir todos en el mismo dispositivo (particio, volumen logico, etc)
 - No puedes crear hard links a directorios
 -  Cuando el ultimo hard link es removido, el acceso a la informacion del archivo tambien es removido.
+
+No existe diferencia alguna entre el primer hard link de un archivo y el ultimo que se ha creado, no tienen jerarquia ni prioridad, solo son hard links. Si se remueve el primero, no pasa nada, los demas siguen existiendo. Los links en linux se utilizan en muchas locaciones para hacer que la informacion sea mas accesible.
+
+#### Entendiendo los Symbolic Links
+Tambien conocidos como soft link, no te dirigen directamente al inodo, sino al nombre del archivo. Esto hace que sean mas felxibles, pero traen mas desventajas.
+Pueden direccionar a archivos en otros dispositivos o directorios, sin embargo, si el archivo original es removido, el symbolic link deja de ser util.
+
+##### Creacion de Links
+
+Usando el comando `ln` podemos crear links, usa el mismo orden de parametros que el comando `cp` y `mv`, primero se menciona la funte del nombre, seguido del nombre desino. Para crear links simbolicos, usamos el atributo `-s`, posteriormente ingresamos los parametros. Para ser capaz de crear hard links,debes de asegurarte de ser el propietario del item al cual quieres direccionar.
+
+###### Ejemplo de creacion de links
+
+- `ln /etc/host .` Crea un link al archivo /etc/host en el directorio actual
+- `ln -s /etc/host .` Crea un symbolic link al archivo /etc/hosts en el directorio actual
+- `ln -s /home /tmp` Crea un link simbolico  del directorio /home al directorio /tmp
+
+el comando `ls` muestra que archivo es un link.
+
+- El el output de ls -l. el primer caracter es una l si el archivo es un link simbolico.
+- Si el archivo es un symbolic link, la salida del comando ls -l muestra el nombre de el item al cual se hace referencia.
+- Si un archivo es un  hard link, ls -l muestra el contador del hard link.
+
