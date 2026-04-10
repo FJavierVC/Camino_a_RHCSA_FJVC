@@ -200,7 +200,12 @@ Usando el comando `ln` podemos crear links, usa el mismo orden de parametros que
 
 el comando `ls` muestra que archivo es un link.
 
-- El el output de ls -l. el primer caracter es una l si el archivo es un link simbolico.
+- Si en el output de ls -l. el primer caracter es una l el archivo es un link simbolico.
 - Si el archivo es un symbolic link, la salida del comando ls -l muestra el nombre de el item al cual se hace referencia.
 - Si un archivo es un  hard link, ls -l muestra el contador del hard link.
 
+###### Eliminando Links
+Remover links puede llegar a ser peligroso, para explicar el porque, consideremos lo siguiente:
+
+- Crea un directorio llamado test en tu directorio home con `mkdir ~/test`
+- Copia todos los archivos que tienen un nombre que comience con a, b, c, d o r desde /etc a este directorio.
